@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zest & Zafran – Restaurant Healthy Marrakech</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sage:        #7A9E7E;
+  --sage-light:  #B8D4BA;
+  --sage-xlight: #E4F0E5;
+  --sage-dark:   #2D4A2E;
+  --sage-mid:    #4E7A50;
+  --terra:       #C4714F;
+  --sand:        #F2E8D9;
+  --gold:        #D4A853;
+  --gold-light:  #F0D898;
+  --gold-dark:   #A87C28;
+  --cream:       #F5FAF5;
+  --dark:        #1A2B1B;
+  --text:        #2A3A2B;
+  --text-muted:  #6A7E6B;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:100;padding:1rem 4rem;display:flex;align-items:center;justify-content:space-between;background:rgba(245,250,245,0.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(212,168,83,0.2)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;letter-spacing:.08em;color:var(--sage-dark)}
+.nav-logo span{color:var(--gold-dark);font-style:italic}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);transition:color .22s}
+.nav-links a:hover{color:var(--gold-dark)}
+.nav-cta{background:var(--gold)!important;color:var(--dark)!important;padding:.46rem 1.4rem;border-radius:2px;font-weight:500!important}
+.nav-cta:hover{background:var(--gold-dark)!important;color:#fff!important}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:7rem 4rem 4rem;background:linear-gradient(130deg,var(--cream) 48%,var(--sage-xlight) 100%);position:relative;overflow:hidden}
+.orb1{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,83,.14) 0%,transparent 70%);top:-100px;right:-100px;pointer-events:none;animation:orb 9s ease-in-out infinite}
+.orb2{position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(122,158,126,.16) 0%,transparent 70%);bottom:5%;left:4%;pointer-events:none;animation:orb 12s ease-in-out infinite reverse}
+.orb3{position:absolute;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(212,168,83,.1) 0%,transparent 70%);bottom:20%;right:20%;pointer-events:none;animation:orb 7s ease-in-out infinite 1s}
+@keyframes orb{0%,100%{transform:translateY(0)}50%{transform:translateY(-22px)}}
+
+.hero-text{position:relative;z-index:2}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.7rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:1.4rem}
+.eyebrow::before{content:'';width:30px;height:1px;background:var(--gold)}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5.2vw,5.2rem);font-weight:300;line-height:1.06;color:var(--sage-dark);margin-bottom:1.5rem}
+h1 em{font-style:italic;color:var(--gold-dark)}
+.hero-sub{font-size:.96rem;color:var(--text-muted);line-height:1.85;max-width:400px;margin-bottom:2.5rem}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-gold{display:inline-block;padding:.9rem 2.2rem;background:var(--gold);color:var(--dark);text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;transition:background .22s,transform .18s;border:none;cursor:pointer;font-family:'DM Sans',sans-serif}
+.btn-gold:hover{background:var(--gold-dark);color:#fff;transform:translateY(-2px)}
+.btn-o{display:inline-block;padding:.9rem 2.2rem;border:1.5px solid var(--gold);color:var(--gold-dark);text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border-radius:2px;transition:all .22s}
+.btn-o:hover{background:var(--gold);color:var(--dark)}
+.hero-visual{position:relative;z-index:2;display:flex;justify-content:center}
+.hero-frame{width:min(440px,90%);aspect-ratio:4/5;border-radius:180px 180px 60px 60px;overflow:hidden;box-shadow:0 32px 80px rgba(45,74,46,.22),0 0 0 4px rgba(212,168,83,.25);animation:riseUp 1.1s ease both .25s}
+@keyframes riseUp{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}
+.hero-frame img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.hero-frame:hover img{transform:scale(1.05)}
+.hero-pill{position:absolute;bottom:-18px;left:-14px;background:var(--gold);color:var(--dark);padding:.9rem 1.3rem;border-radius:6px;text-align:center;box-shadow:0 8px 28px rgba(212,168,83,.4);animation:riseUp 1.1s ease both .6s}
+.hero-pill .big{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;line-height:1;display:block}
+.hero-pill .small{font-size:.66rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;opacity:.8}
+
+/* GOLD DIVIDER LINE */
+.gold-line{height:3px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold-light),var(--gold),transparent)}
+
+/* STRIP */
+.strip{background:var(--sage-dark);padding:1rem 4rem;display:flex;gap:2rem;align-items:center;flex-wrap:wrap}
+.si{display:flex;align-items:center;gap:.6rem;font-size:.74rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--sage-light);white-space:nowrap}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+/* SECTIONS */
+.section{padding:6rem 4rem}
+.lbl{display:inline-flex;align-items:center;gap:.55rem;font-size:.68rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:.9rem}
+.lbl::before{content:'';width:22px;height:1px;background:var(--gold)}
+h2.st{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.8vw,3.2rem);font-weight:300;color:var(--sage-dark);line-height:1.15;max-width:580px}
+h2.st em{font-style:italic;color:var(--gold-dark)}
+
+/* ABOUT */
+.about{background:var(--sage-xlight)}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-imgs{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.about-imgs img{width:100%;border-radius:4px;box-shadow:0 10px 28px rgba(45,74,46,.12);transition:transform .4s}
+.about-imgs img:first-child{border-radius:70px 4px 4px 4px;margin-top:1.8rem}
+.about-imgs img:last-child{border-radius:4px 4px 70px 4px}
+.about-imgs img:hover{transform:scale(1.03)}
+.about-text p{color:var(--text-muted);line-height:1.9;margin-bottom:1.1rem;font-size:.94rem}
+.stats{display:flex;gap:2.5rem;margin-top:2rem;padding-top:1.8rem;border-top:2px solid var(--gold-light)}
+.sn{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:600;color:var(--gold-dark);line-height:1}
+.sl{font-size:.72rem;color:var(--text-muted);margin-top:.3rem}
+
+/* MENU */
+.menu-sec{background:var(--cream)}
+.tabs{display:flex;gap:.4rem;margin:2.5rem 0 3rem;flex-wrap:wrap}
+.tab{padding:.5rem 1.3rem;border:1.5px solid rgba(212,168,83,.4);background:transparent;font-family:'DM Sans',sans-serif;font-size:.74rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);cursor:pointer;border-radius:2px;transition:all .2s}
+.tab.active,.tab:hover{background:var(--gold);border-color:var(--gold);color:var(--dark)}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.4rem}
+.mcard{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 14px rgba(45,74,46,.06);transition:transform .3s,box-shadow .3s;animation:riseUp .55s ease both;border-top:3px solid transparent}
+.mcard:hover{transform:translateY(-6px);box-shadow:0 14px 36px rgba(45,74,46,.13);border-top-color:var(--gold)}
+.mcard-w{overflow:hidden}
+.mcard img{width:100%;height:175px;object-fit:cover;transition:transform .5s;display:block}
+.mcard:hover img{transform:scale(1.07)}
+.mcard-b{padding:1.1rem 1.3rem 1rem}
+.mcard-tag{font-size:.65rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:.35rem}
+.mcard-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--sage-dark);margin-bottom:.4rem}
+.mcard-desc{font-size:.8rem;color:var(--text-muted);line-height:1.65}
+.mcard-f{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1.3rem 1.1rem;border-top:1px solid var(--sage-xlight)}
+.mcard-price{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--gold-dark)}
+.mcard-kcal{font-size:.7rem;color:var(--text-muted)}
+
+/* EXPERIENCE */
+.exp-sec{background:var(--sage-dark);position:relative;overflow:hidden}
+.exp-sec::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 38px,rgba(255,255,255,.015) 38px,rgba(255,255,255,.015) 39px)}
+.exp-sec .lbl{color:var(--gold-light)}
+.exp-sec .lbl::before{background:var(--gold)}
+.exp-sec .st{color:var(--sand)}
+.exp-sec .st em{color:var(--gold-light)}
+.egrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem;margin-top:3rem}
+.ecard{padding:1.8rem;border:1px solid rgba(212,168,83,.2);border-radius:8px;background:rgba(255,255,255,.04);position:relative;overflow:hidden;transition:background .3s,transform .3s,border-color .3s}
+.ecard::after{content:'';position:absolute;left:0;bottom:0;width:100%;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-light));transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.ecard:hover{background:rgba(212,168,83,.06);transform:translateY(-4px);border-color:rgba(212,168,83,.4)}
+.ecard:hover::after{transform:scaleX(1)}
+.ecard-i{font-size:1.8rem;margin-bottom:.9rem;display:block}
+.ecard h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold-light);margin-bottom:.7rem}
+.ecard p{font-size:.82rem;color:rgba(229,240,230,.6);line-height:1.8}
+
+/* GALLERY */
+.gal-sec{background:var(--sage-xlight);padding:5rem 4rem}
+.ggrid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:auto auto;gap:.9rem;margin-top:2.5rem}
+.gi{overflow:hidden;border-radius:6px;position:relative}
+.gi:first-child{grid-row:span 2}
+.gi img{width:100%;height:100%;min-height:190px;object-fit:cover;display:block;transition:transform .6s}
+.gi:hover img{transform:scale(1.07)}
+.gi::after{content:'';position:absolute;inset:0;border:0px solid var(--gold);border-radius:6px;transition:border-width .3s}
+.gi:hover::after{border-width:3px}
+
+/* TESTIMONIALS */
+.testi-sec{background:var(--cream);padding:6rem 4rem}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem}
+.tcard{background:#fff;padding:1.8rem;border-radius:8px;border-bottom:3px solid var(--gold);box-shadow:0 2px 12px rgba(45,74,46,.05);transition:transform .3s,box-shadow .3s}
+.tcard:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(212,168,83,.15)}
+.tc-stars{color:var(--gold);font-size:.9rem;margin-bottom:.9rem;letter-spacing:.1em}
+.tc-q{font-family:'Cormorant Garamond',serif;font-size:2.8rem;color:var(--gold-light);line-height:.55;display:block;margin-bottom:.9rem}
+.tc-text{font-size:.87rem;color:var(--text-muted);line-height:1.8;font-style:italic;margin-bottom:1.3rem}
+.tc-name{font-size:.78rem;font-weight:500;color:var(--sage-dark)}
+.tc-loc{font-size:.7rem;color:var(--text-muted)}
+
+/* RESERVATION */
+.resa-sec{background:var(--sage-dark);padding:6rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;overflow:hidden}
+.resa-sec::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),var(--gold-light),var(--gold),transparent)}
+.resa-sec .lbl{color:var(--gold-light)}
+.resa-sec .lbl::before{background:var(--gold)}
+.resa-sec .st{color:#fff}
+.resa-sec .st em{color:var(--gold-light)}
+.resa-sub{color:rgba(229,240,230,.7);line-height:1.85;margin-top:1rem;font-size:.92rem}
+.rinfo{display:flex;flex-direction:column;gap:.9rem;margin-top:1.8rem}
+.ri{display:flex;align-items:center;gap:.8rem;font-size:.84rem;color:var(--sage-light)}
+.ri-ic{width:34px;height:34px;border-radius:50%;background:rgba(212,168,83,.18);border:1px solid rgba(212,168,83,.3);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+.form{display:flex;flex-direction:column;gap:.9rem}
+.form input,.form select{padding:.85rem 1.1rem;border:1.5px solid rgba(212,168,83,.25);background:rgba(212,168,83,.07);color:#fff;font-family:'DM Sans',sans-serif;font-size:.85rem;border-radius:4px;outline:none;transition:border-color .2s,background .2s}
+.form input::placeholder{color:rgba(229,240,230,.45)}
+.form input:focus,.form select:focus{border-color:rgba(212,168,83,.7);background:rgba(212,168,83,.12)}
+.form select{color:rgba(229,240,230,.8)}
+.form select option{background:var(--sage-dark)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.btn-resa{padding:.95rem;background:var(--gold);color:var(--dark);border:none;font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;border-radius:2px;cursor:pointer;transition:all .22s}
+.btn-resa:hover{background:var(--gold-light);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{background:var(--dark);padding:4rem 4rem 2rem;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;border-top:3px solid var(--gold-dark)}
+.f-brand{max-width:270px}
+.f-logo{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:300;color:var(--sand);letter-spacing:.08em;display:block;margin-bottom:.9rem}
+.f-logo span{color:var(--gold);font-style:italic}
+.f-brand p{font-size:.79rem;color:rgba(229,240,230,.45);line-height:1.8}
+footer h4{font-size:.68rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem}
+footer ul{list-style:none}
+footer ul li{margin-bottom:.6rem}
+footer ul a{text-decoration:none;font-size:.82rem;color:rgba(229,240,230,.5);transition:color .2s}
+footer ul a:hover{color:var(--gold-light)}
+.f-bottom{grid-column:1/-1;padding-top:1.8rem;border-top:1px solid rgba(212,168,83,.15);display:flex;justify-content:space-between;align-items:center;font-size:.72rem;color:rgba(229,240,230,.3)}
+.f-gem{color:var(--gold);font-size:.9rem}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr;padding:5.5rem 1.5rem 3rem;text-align:center}
+  .hero-sub{max-width:100%;margin:0 auto 2rem}
+  .hero-btns{justify-content:center}
+  .hero-visual{margin-top:2.5rem}
+  .about-inner,.egrid,.tgrid{grid-template-columns:1fr}
+  .resa-sec{grid-template-columns:1fr;padding:4rem 1.5rem}
+  .ggrid{grid-template-columns:1fr 1fr}
+  .gi:first-child{grid-row:span 1}
+  footer{grid-template-columns:1fr 1fr;padding:2.5rem 1.5rem 1.5rem}
+  .section{padding:4rem 1.5rem}
+  .strip{padding:1rem 1.5rem;gap:1.2rem}
+  .gal-sec,.testi-sec{padding:4rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Zest <span>&</span> Zafran</div>
+  <ul class="nav-links">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#galerie">Galerie</a></li>
+    <li><a href="#avis">Avis</a></li>
+    <li><a href="#resa" class="nav-cta">Réserver</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="orb1"></div><div class="orb2"></div><div class="orb3"></div>
+  <div class="hero-text">
+    <div class="eyebrow">Restaurant Healthy · Marrakech</div>
+    <h1>La cuisine<br><em>saine</em> &amp;<br>savoureuse</h1>
+    <p class="hero-sub">Des saveurs marocaines authentiques, réinventées avec des ingrédients locaux et bio. Une expérience culinaire qui nourrit le corps et l'âme, au cœur de la Médina.</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn-gold">Découvrir le menu</a>
+      <a href="#resa" class="btn-o">Réserver une table</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-frame">
+      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80" alt="Bowl healthy coloré" />
+    </div>
+    <div class="hero-pill">
+      <span class="big">100%</span>
+      <span class="small">Bio &amp; Local</span>
+    </div>
+  </div>
+</section>
+
+<!-- GOLD LINE -->
+<div class="gold-line"></div>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="si">🌿 Ingrédients biologiques</div><div class="dot"></div>
+  <div class="si">🫐 Superaliments</div><div class="dot"></div>
+  <div class="si">🌱 Options véganes</div><div class="dot"></div>
+  <div class="si">☀️ Terrasse jardin</div><div class="dot"></div>
+  <div class="si">📍 Médina de Marrakech</div>
+</div>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+  <div class="about-inner">
+    <div class="about-imgs">
+      <img src="https://images.unsplash.com/photo-1490474418585-ba9bad8fd0ea?w=400&q=80" alt="Ingrédients frais" />
+      <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=400&q=80" alt="Plats sains" />
+    </div>
+    <div class="about-text reveal">
+      <div class="lbl">Notre histoire</div>
+      <h2 class="st">Une <em>passion</em> pour la santé et les saveurs</h2>
+      <br>
+      <p>Né au cœur de Marrakech, Zest &amp; Zafran est une ode à la richesse culinaire marocaine revisitée. Nous sélectionnons chaque produit auprès des fermiers locaux des montagnes de l'Atlas, garantissant fraîcheur et traçabilité à chaque assiette.</p>
+      <p>Notre chef, Leila Benali, marie les épices emblématiques du Maroc — curcuma, safran, ras el hanout — avec les tendances de la cuisine healthy mondiale pour créer une expérience unique et inoubliable.</p>
+      <div class="stats">
+        <div><div class="sn">47</div><div class="sl">Producteurs locaux</div></div>
+        <div><div class="sn">98%</div><div class="sl">Avis positifs</div></div>
+        <div><div class="sn">8</div><div class="sl">Années d'expérience</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="section menu-sec" id="menu">
+  <div class="lbl">Notre sélection</div>
+  <h2 class="st">Un menu qui <em>revitalise</em></h2>
+  <div class="tabs">
+    <button class="tab active" onclick="filterMenu('tous',this)">Tous</button>
+    <button class="tab" onclick="filterMenu('petit-dejeuner',this)">Petit-déjeuner</button>
+    <button class="tab" onclick="filterMenu('bowls',this)">Bowls &amp; Salades</button>
+    <button class="tab" onclick="filterMenu('plats',this)">Plats chauds</button>
+    <button class="tab" onclick="filterMenu('boissons',this)">Boissons</button>
+  </div>
+  <div class="mgrid" id="menuGrid"></div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section exp-sec">
+  <div class="lbl">L'expérience</div>
+  <h2 class="st">Plus qu'un repas, un <em>rituel</em> de bien-être</h2>
+  <div class="egrid">
+    <div class="ecard reveal"><span class="ecard-i">🌿</span><h3>Ingrédients de saison</h3><p>Notre menu évolue chaque mois avec les récoltes locales. Chaque plat célèbre ce que la nature offre en ce moment.</p></div>
+    <div class="ecard reveal d1"><span class="ecard-i">🧘</span><h3>Cuisine consciente</h3><p>Chaque recette est conçue pour nourrir en profondeur. Macros équilibrées, vitamines préservées, zéro additif.</p></div>
+    <div class="ecard reveal d2"><span class="ecard-i">☀️</span><h3>Cadre enchanteur</h3><p>Un riad traditionnel avec terrasse, jardins d'herbes aromatiques et une vue imprenable sur la Médina.</p></div>
+    <div class="ecard reveal"><span class="ecard-i">🫙</span><h3>Fermentés maison</h3><p>Kombucha, labneh, légumes lacto-fermentés — nos probiotiques sont préparés avec amour chaque semaine.</p></div>
+    <div class="ecard reveal d1"><span class="ecard-i">🌍</span><h3>Zéro déchet</h3><p>Emballages biodégradables, compostage, circuit court. Notre engagement durable pour Marrakech et la planète.</p></div>
+    <div class="ecard reveal d2"><span class="ecard-i">👨‍🍳</span><h3>Ateliers cuisine</h3><p>Apprenez à cuisiner healthy à la marocaine avec notre chef. Sessions chaque vendredi matin sur réservation.</p></div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gal-sec" id="galerie">
+  <div class="lbl">Galerie</div>
+  <h2 class="st">Un avant-goût <em>visuel</em></h2>
+  <div class="ggrid">
+    <div class="gi"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=700&q=80" alt="Bowl coloré" /></div>
+    <div class="gi"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&q=80" alt="Salade fraîche" /></div>
+    <div class="gi"><img src="https://images.unsplash.com/photo-1551248429-40975aa4de74?w=400&q=80" alt="Terrasse" /></div>
+    <div class="gi"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80" alt="Plat marocain" /></div>
+    <div class="gi"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&q=80" alt="Légumes frais" /></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-sec" id="avis">
+  <div class="lbl">Témoignages</div>
+  <h2 class="st">Ils nous font <em>confiance</em></h2>
+  <div class="tgrid">
+    <div class="tcard reveal">
+      <div class="tc-stars">★★★★★</div>
+      <span class="tc-q">&ldquo;</span>
+      <p class="tc-text">Une révélation ! Le bowl au quinoa et légumes rôtis avec le dressing au citron confit est incroyable. On revient chaque semaine.</p>
+      <div class="tc-name">Sofia M.</div><div class="tc-loc">Marrakech, Maroc</div>
+    </div>
+    <div class="tcard reveal d1">
+      <div class="tc-stars">★★★★★</div>
+      <span class="tc-q">&ldquo;</span>
+      <p class="tc-text">Le cadre est magnifique, la nourriture est délicieuse et vraiment saine. Un vrai havre de paix en plein cœur de la médina.</p>
+      <div class="tc-name">Thomas B.</div><div class="tc-loc">Paris, France</div>
+    </div>
+    <div class="tcard reveal d2">
+      <div class="tc-stars">★★★★★</div>
+      <span class="tc-q">&ldquo;</span>
+      <p class="tc-text">Je suis végane et c'est rare de trouver autant de choix à Marrakech. Les saveurs sont exceptionnelles, je recommande vivement !</p>
+      <div class="tc-name">Amina K.</div><div class="tc-loc">Casablanca, Maroc</div>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVATION -->
+<section class="section resa-sec" id="resa">
+  <div>
+    <div class="lbl">Réservation</div>
+    <h2 class="st">Réservez votre <em>table</em></h2>
+    <p class="resa-sub">Vivez l'expérience Zest &amp; Zafran. Nous vous accueillons du mardi au dimanche, de 8h à 22h, dans notre riad au cœur de la Médina.</p>
+    <div class="rinfo">
+      <div class="ri"><div class="ri-ic">📍</div>12 Derb Sidi Bouamar, Médina, Marrakech</div>
+      <div class="ri"><div class="ri-ic">📞</div>+212 524 38 XX XX</div>
+      <div class="ri"><div class="ri-ic">🕐</div>Mar – Dim : 08h00 – 22h00</div>
+    </div>
+  </div>
+  <form class="form" onsubmit="submitResa(event)">
+    <div class="frow">
+      <input type="text" placeholder="Prénom &amp; Nom" required />
+      <input type="tel" placeholder="Téléphone" />
+    </div>
+    <input type="email" placeholder="Adresse e-mail" required />
+    <div class="frow">
+      <input type="date" required />
+      <input type="time" value="20:00" required />
+    </div>
+    <select required>
+      <option value="">Nombre de personnes</option>
+      <option>1 personne</option>
+      <option>2 personnes</option>
+      <option>3 personnes</option>
+      <option>4 personnes</option>
+      <option>5+ personnes</option>
+    </select>
+    <button type="submit" class="btn-resa">Confirmer la réservation ✦</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-brand">
+    <span class="f-logo">Zest <span>&</span> Zafran</span>
+    <p>Restaurant healthy au cœur de Marrakech. Cuisine marocaine réinventée avec des produits biologiques locaux et de saison.</p>
+  </div>
+  <div>
+    <h4>Navigation</h4>
+    <ul>
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#menu">Notre menu</a></li>
+      <li><a href="#galerie">Galerie</a></li>
+      <li><a href="#avis">Avis clients</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Horaires</h4>
+    <ul>
+      <li><a href="#">Mar – Ven : 08h – 22h</a></li>
+      <li><a href="#">Sam – Dim : 09h – 23h</a></li>
+      <li><a href="#">Lundi : Fermé</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Contact</h4>
+    <ul>
+      <li><a href="#">Médina, Marrakech</a></li>
+      <li><a href="#">+212 524 38 XX XX</a></li>
+      <li><a href="#">hello@zestzafran.ma</a></li>
+      <li><a href="#">Instagram</a></li>
+    </ul>
+  </div>
+  <div class="f-bottom">
+    <span>© 2025 Zest &amp; Zafran. Tous droits réservés.</span>
+    <span>Fait avec <span class="f-gem">✦</span> à Marrakech</span>
+  </div>
+</footer>
+
+<script>
+const MENU = [
+  {cat:'petit-dejeuner',img:'https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?w=400&q=80',tag:'Petit-déjeuner',name:'Açaï Bowl Atlas',desc:'Açaï, banane, granola maison, graines de chia, miel d\'argan et fruits de saison.',price:'85 MAD',kcal:'320 kcal'},
+  {cat:'petit-dejeuner',img:'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=400&q=80',tag:'Petit-déjeuner',name:'Toast Avocat Chermoula',desc:'Pain de seigle, avocat, œufs pochés, tomates cerises et sauce chermoula maison.',price:'75 MAD',kcal:'410 kcal'},
+  {cat:'bowls',img:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80',tag:'Bowl',name:'Bowl Quinoa Safran',desc:'Quinoa doré au safran, légumes rôtis, houmous, sumac et citron confit de l\'Atlas.',price:'110 MAD',kcal:'480 kcal'},
+  {cat:'bowls',img:'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&q=80',tag:'Salade',name:'Salade Médina',desc:'Verdures bio, betterave, grenade, noix de cajou, feta et vinaigrette à la fleur d\'oranger.',price:'95 MAD',kcal:'280 kcal'},
+  {cat:'plats',img:'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80',tag:'Plat chaud',name:'Tajine Vert Légumes',desc:'Tajine de légumes de saison, pois chiches, ras el hanout, herbes fraîches et couscous complet.',price:'130 MAD',kcal:'520 kcal'},
+  {cat:'plats',img:'https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&q=80',tag:'Plat chaud',name:'Poulet Curcuma Atlas',desc:'Blanc de poulet fermier, sauce curcuma-gingembre, lentilles corail et légumes vapeur.',price:'145 MAD',kcal:'560 kcal'},
+  {cat:'boissons',img:'https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=400&q=80',tag:'Boisson',name:'Jus Vert Détox',desc:'Épinards, concombre, pomme verte, gingembre frais, citron et menthe de Marrakech.',price:'45 MAD',kcal:'95 kcal'},
+  {cat:'boissons',img:'https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=400&q=80',tag:'Boisson',name:'Latte Safran Amande',desc:'Lait d\'amande chaud, safran du Maroc, cardamome, cannelle et miel brut d\'argan.',price:'55 MAD',kcal:'130 kcal'},
+];
+
+function filterMenu(cat, btn) {
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  const grid = document.getElementById('menuGrid');
+  grid.innerHTML = '';
+  MENU.filter(m=>cat==='tous'||m.cat===cat).forEach((m,i)=>{
+    const d = document.createElement('div');
+    d.className='mcard';
+    d.style.animationDelay=(i*0.08)+'s';
+    d.innerHTML=`<div class="mcard-w"><img src="${m.img}" alt="${m.name}" loading="lazy"/></div><div class="mcard-b"><div class="mcard-tag">${m.tag}</div><div class="mcard-name">${m.name}</div><div class="mcard-desc">${m.desc}</div></div><div class="mcard-f"><span class="mcard-price">${m.price}</span><span class="mcard-kcal">${m.kcal}</span></div>`;
+    grid.appendChild(d);
+  });
+}
+filterMenu('tous',document.querySelector('.tab.active'));
+
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+function submitResa(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('button');
+  const orig=btn.textContent;
+  btn.textContent='✦ Réservation confirmée !';
+  btn.style.background='#7A9E7E';
+  setTimeout(()=>{btn.textContent=orig;btn.style.background='';},3500);
+}
+</script>
+</body>
+</html>
